@@ -100,20 +100,17 @@
       {$recipe.notes}
     </div>
   {/if}
-  <div>
-    <span class="recipe-cupSize">{tt( $translations, "global.cupSize" )}</span>
-    <select
-      class="recipe-cupSize-select"
-      bind:value={selectedCupSize}
-      on:change={selectCupSize}
-    >
-      {#each $recipe.cupSizes as size}
-        <option value={size}>{size}ml</option>
-      {/each}
-    </select>
+  <div class="recipe-cupSize">
+    <span>{tt( $translations, "global.cupSize" )}:</span>
+    {#each $recipe.cupSizes as size}
+    <label>
+      <input type=radio bind:group={selectedCupSize} value={size} on:change={selectCupSize}>
+      {size}ml
+    </label>
+    {/each}
   </div>
   <div>
-    <span class="recipe-servings">{tt( $translations, "global.servings" )}</span>
+    <span class="recipe-servings">{tt( $translations, "global.servings" )}:</span>
     <input
       class="recipe-servings-input"
       type="number"
