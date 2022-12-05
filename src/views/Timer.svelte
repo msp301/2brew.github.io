@@ -210,7 +210,7 @@
 .timer-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
   position: relative;
 }
 .timer {
@@ -389,6 +389,7 @@
 }
 .recipe-notes {
   font-size: 11px;
+  margin-bottom: 40px;
 }
 .recipe-title {
   font-size: 20px;
@@ -397,7 +398,7 @@
 .recipe-servings-input {
   background-color: var(--default-box-color);
   border-radius: 00.25rem;
-  font-size: large;
+  font-size: 20px;
   height: 2rem;
   text-align: center;
 }
@@ -413,7 +414,7 @@
   padding-left: 2%;
 }
 .recipe-cupSize, .recipe-servings {
-  font-size: large;
+  font-size: 20px;
 }
 .recipe-pad {
   width: 30%;
