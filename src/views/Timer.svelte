@@ -359,7 +359,7 @@
 .step-time .step-icon {
   width: 15px;
 }
-.recipe-notes, .recipe-title, .recipe-cupSize .recipe-servings {
+.recipe-notes, .recipe-title, .recipe-cupSize, .recipe-servings {
   width: 100%;
   color: var(--second-text-color);
   margin: 10px 0;
@@ -382,7 +382,7 @@
   flex-flow: wrap;
   padding-left: 2%;
 }
-.recipe-ratio-select {
+.recipe-cupSize, .recipe-servings {
   font-size: large;
 }
 .recipe-pad {
