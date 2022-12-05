@@ -37,23 +37,25 @@ export const clearRecipe = () => {
   recipe.set({steps: [], ingridients: {}, error: null, isFetching: true});
 };
 
-export const fetchCurrentRecipe = async (type, name, recipeRatio=1) => {
+export const fetchCurrentRecipe = async (type, name, cupSize=300, servings=1) => {
   let currentRecipe = null;
   recipe.set({title: null, notes: null, steps: [], ingridients: {}, error: null, isFetching: true});
   await fetchRecipes(type);
   currentRecipe = get(recipes)[type] ? get(recipes)[type].find((item) => item.name === name) : null;
 
+  let recipeRatio = ( cupSize / currentRecipe.ingridients.water ) * servings
+
   const calculatedIngredients = {
     ...currentRecipe.ingridients,
-    water: currentRecipe.ingridients.water * recipeRatio,
-    coffee: currentRecipe.ingridients.coffee * recipeRatio,
+    water: Math.round( currentRecipe.ingridients.water * recipeRatio ),
+    coffee: Math.round( currentRecipe.ingridients.coffee * recipeRatio ),
   }
   console.log("calculatedIngredients: ", calculatedIngredients);
   const calculatedSteps = currentRecipe.steps.map((step) => {
     if (step.type === 'pour') {
       return {
         ...step,
-        amount: step.amount * recipeRatio
+        amount: Math.round( step.amount * recipeRatio )
       };
     }
     return step;
@@ -68,11 +70,9 @@ export const fetchCurrentRecipe = async (type, name, recipeRatio=1) => {
       steps: calculatedSteps,
       error: null,
       isFetching: false,
-      ratios: [
-        1,
-        0.5,
-        1.5,
-        2,
+      cupSizes: [
+        300,
+        500
       ]
     });
   } else {

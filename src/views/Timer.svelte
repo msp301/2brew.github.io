@@ -34,7 +34,8 @@
 
   let pausedTime = false;
 
-  let selectedRatio;
+  let selectedCupSize;
+  let selectedServings;
 
   onMount(() => {
     fetchCurrentRecipe(params.type, params.name);
@@ -44,8 +45,11 @@
     destroyTimer();
   });
 
-  function selectRatio(event) {
-    fetchCurrentRecipe(params.type, params.name, event.target.value);
+  function selectCupSize(event) {
+    fetchCurrentRecipe(params.type, params.name, event.target.value, selectedServings);
+  }
+  function selectServings(event) {
+    fetchCurrentRecipe(params.type, params.name, selectedCupSize, event.target.value);
   }
 
   function goToNext() {
@@ -97,16 +101,27 @@
     </div>
   {/if}
   <div>
-    <span class="recipe-ratio">{tt( $translations, "global.ratio" )}</span>
+    <span class="recipe-cupSize">{tt( $translations, "global.cupSize" )}</span>
     <select
-      class="recipe-ratio-select"
-      bind:value={selectedRatio}
-      on:change={selectRatio}
+      class="recipe-cupSize-select"
+      bind:value={selectedCupSize}
+      on:change={selectCupSize}
     >
-      {#each $recipe.ratios as ratio}
-        <option value={ratio}>{ratio}</option>
+      {#each $recipe.cupSizes as size}
+        <option value={size}>{size}ml</option>
       {/each}
     </select>
+  </div>
+  <div>
+    <span class="recipe-servings">{tt( $translations, "global.servings" )}</span>
+    <input
+      class="recipe-servings-input"
+      type="number"
+      min=1
+      max=5
+      bind:value={selectedServings}
+      on:change={selectServings}
+    >
   </div>
   <div class="timer-wrapper">
    {#if $timer.step !== null && $timer.step < $recipe.steps.length-1}
@@ -344,7 +359,7 @@
 .step-time .step-icon {
   width: 15px;
 }
-.recipe-notes, .recipe-title, .recipe-ratio {
+.recipe-notes, .recipe-title, .recipe-cupSize .recipe-servings {
   width: 100%;
   color: var(--second-text-color);
   margin: 10px 0;
