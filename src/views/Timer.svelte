@@ -102,12 +102,14 @@
   {/if}
   <div class="recipe-cupSize">
     <span>{tt( $translations, "global.cupSize" )}:</span>
-    {#each $recipe.cupSizes as size}
-    <label>
-      <input type=radio bind:group={selectedCupSize} value={size} on:change={selectCupSize}>
-      {size}ml
-    </label>
-    {/each}
+    <div class="radio-group">
+      {#each $recipe.cupSizes as size}
+      <input id="cupSize-{size}" type=radio name="cupSize" bind:group={selectedCupSize} value={size} on:change={selectCupSize}>
+      <label for="cupSize-{size}">
+        {size}ml
+      </label>
+      {/each}
+    </div>
   </div>
   <div>
     <span class="recipe-servings">{tt( $translations, "global.servings" )}:</span>
@@ -355,6 +357,30 @@
 }
 .step-time .step-icon {
   width: 15px;
+}
+.radio-group {
+  display: inline-flex;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  height: 2rem;
+}
+.radio-group label {
+  align-items: center;
+  background-color: var(--default-box-color);
+  color: var(--default-text-color);
+  display: inline-flex;
+
+  border-right: 1px solid;
+  padding: 0.5rem;
+}
+.radio-group > input[type="radio"]:checked + label {
+  background-color: var(--active-color);
+}
+.radio-group:last-child {
+  border-right-color: transparent;
+}
+.radio-group input {
+  display: none;
 }
 .recipe-notes, .recipe-title, .recipe-cupSize, .recipe-servings {
   width: 100%;
