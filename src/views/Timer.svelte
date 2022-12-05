@@ -35,7 +35,7 @@
   let pausedTime = false;
 
   let selectedCupSize;
-  let selectedServings;
+  let selectedServings = 1;
 
   onMount(() => {
     fetchCurrentRecipe(params.type, params.name);
@@ -393,6 +393,13 @@
 .recipe-title {
   font-size: 20px;
   padding-top: 10px;
+}
+.recipe-servings-input {
+  background-color: var(--default-box-color);
+  border-radius: 00.25rem;
+  font-size: large;
+  height: 2rem;
+  text-align: center;
 }
 .recipe-info {
   display: flex;
