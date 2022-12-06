@@ -134,8 +134,8 @@
       </div>
     {/if}
     <div class="actions timer-water">
-        {parseInt($timer.water)}{tt($translations, 'global.ml')}
-      </div>
+      {parseInt($timer.water)}{tt($translations, 'global.ml')}
+    </div>
     <div class="timer" on:click={toggleTime}>
       {#if $timer.step !== null }
         {#if pausedTime !== false}
@@ -178,6 +178,11 @@
         ></div>
       {/if}
     </div>
+    {#if $timer.step !== null && $recipe.steps[$timer.step].type === 'pour'}
+      <div class="actions target-water">
+        {parseInt(calculateWater($recipe, $timer.step + 1))}{tt($translations, 'global.ml')}
+      </div>
+    {/if}
   </div>
   <div class="steps">
     {#each $recipe.steps as step, index}
@@ -274,6 +279,14 @@
 .timer-water {
   color: var(--water-color);
   left: 0;
+  align-items: flex-start;
+  font-size: 30px;
+  justify-content: flex-start;
+}
+
+.target-water {
+  color: var(--water-color);
+  right: 0;
   align-items: flex-start;
   font-size: 30px;
   justify-content: flex-start;
