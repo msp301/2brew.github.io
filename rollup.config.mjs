@@ -1,10 +1,14 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import json from 'rollup-plugin-json';
+import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
-import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import terser from '@rollup/plugin-terser';
 import svg from 'rollup-plugin-svg'
+import * as path from "path";
+
+import {spawn} from "child_process";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -20,11 +24,11 @@ export default {
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
+		}),
+		postcss({
 			// we'll extract any component CSS out into
 			// a separate file - better for performance
-			css: css => {
-				css.write('dist/public/build/bundle.css');
-			}
+			extract: path.resolve('dist/public/build/bundle.css')
 		}),
 		svg(),
 		json(),
@@ -64,7 +68,7 @@ function serve() {
 			if (!started) {
 				started = true;
 
-				require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+				spawn('npm', ['run', 'start', '--', '--dev'], {
 					stdio: ['ignore', 'inherit', 'inherit'],
 					shell: true
 				});
