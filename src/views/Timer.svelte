@@ -192,10 +192,10 @@
             <div class="step-icon">{@html resolveStepIcon(step.type)}</div>
             {tt($translations, `step.${step.type}`)}
           </div>
-          {#if step.amount}
-            <div class="step-amount">{step.amount}{tt($translations, 'global.ml')}</div>
-          {:else if step.notes}
+          {#if step.notes}
             <div class="step-amount">{step.notes}</div>
+          {:else if step.amount}
+            <div class="step-amount">{step.amount}{tt($translations, 'global.ml')}</div>
           {/if}
           <div class="step-time">
             <div class="step-icon">{@html time}</div>
