@@ -10,8 +10,8 @@
     },
     { name: "system.v60", url: "v_60", icon: resolveSystemIcon("v_60") },
     { name: "system.moka", url: "moka", icon: resolveSystemIcon("moka") },
-    { name: "system.frenchPress", url: "frenchPress", icon:
-      resolveSystemIcon("frenchPress")}
+    { name: "system.frenchPress", url: "frenchPress", icon: resolveSystemIcon("frenchPress")},
+    { name: "system.o1", url: "orea_o1", icon: resolveSystemIcon("orea_o1") }
   ];
   const languages = LANGUAGE_LIST;
   let selectedLang = $translations.language;

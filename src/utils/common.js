@@ -4,6 +4,7 @@ import aeropress from '../assets/icons/aeropress.svg';
 import moka from '../assets/icons/moka.svg';
 import frenchPress from '../assets/icons/frenchpress.svg';
 import v60 from '../assets/icons/v60.svg';
+import o1 from '../assets/icons/orea_o1.svg';
 import _invert from '../assets/icons/_invert.svg';
 import _lid from '../assets/icons/_lid.svg';
 import _temp from '../assets/icons/_temp.svg';
@@ -36,6 +37,8 @@ export function resolveSystemIcon(type) {
       return aeropress;
     case 'frenchPress':
       return frenchPress;
+    case 'orea_o1':
+      return o1;
   }
 }
 

@@ -4,6 +4,7 @@
       "aeropress": "AeroPress",
       "moka": "Moka",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "French Press"
     },
     "global": {
@@ -46,6 +47,7 @@
       "aeropress": "Аэропресс",
       "moka": "Гейзер",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "Френч-пресс"
     },
     "global": {
@@ -86,6 +88,7 @@
       "aeropress": "AeroPress",
       "moka": "Kawiarka",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "French Press"
     },
     "global": {
@@ -126,6 +129,7 @@
       "aeropress": "Аэрапрэс",
       "moka": "Гейзер",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "French Press"
     },
     "global": {
@@ -166,6 +170,7 @@
       "aeropress": "AeroPress",
       "moka": "moka",
       "v60": "v60",
+      "o1": "Orea o1",
       "frenchPress": "French Press"
     },
     "global": {
@@ -246,6 +251,7 @@
       "aeropress": "AeroPress",
       "moka": "Moka",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "French Press"
     },
     "global": {
@@ -286,6 +292,7 @@
       "aeropress": "AeroPress",
       "moka": "Caffettiera",
       "v60": "V60",
+      "o1": "Orea o1",
       "frenchPress": "Caffettiera francese"
     },
     "global": {

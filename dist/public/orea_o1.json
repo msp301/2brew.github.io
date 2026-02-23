@@ -1,0 +1,67 @@
+[
+  {
+    "name": "easy-does-it",
+    "title": "Easy Does It",
+    "notes": "For WAVE filters, grind a little finer!",
+    "ingridients": {
+      "coffee": 16,
+      "water": 260,
+      "grind": 6,
+      "temp": 94,
+      "time": 160
+    },
+    "steps": [
+      {
+        "type": "pour",
+        "notes": "Gentle spiral pour to 60G",
+        "amount": 60,
+        "time": 10
+      },
+      {
+        "type": "bloom",
+        "time": 30
+      },
+      {
+        "type": "pour",
+        "notes": "Gentle spiral pour to 110G",
+        "amount": 50,
+        "time": 10
+      },
+      {
+        "type": "wait",
+        "time": 20
+      },
+      {
+        "type": "pour",
+        "notes": "Gentle spiral pour to 160G",
+        "amount": 50,
+        "time": 10
+      },
+      {
+        "type": "wait",
+        "time": 20
+      },
+      {
+        "type": "pour",
+        "notes": "Gentle spiral pour to 210G",
+        "amount": 50,
+        "time": 10
+      },
+      {
+        "type": "wait",
+        "time": 20
+      },
+      {
+        "type": "pour",
+        "notes": "Gentle spiral pour to 260G",
+        "amount": 50,
+        "time": 10
+      },
+      {
+        "type": "wait",
+        "notes": "2:40-3:40 Enjoy!",
+        "time": 20
+      }
+    ]
+  }
+]
